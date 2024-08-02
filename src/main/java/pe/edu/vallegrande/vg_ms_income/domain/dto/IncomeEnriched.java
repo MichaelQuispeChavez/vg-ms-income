@@ -18,6 +18,7 @@ public class IncomeEnriched {
     private String comment;
     private char statusPayment;
     private boolean statusNotification;
+    private String phoneNumber;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }

@@ -53,6 +53,7 @@ public class IncomeService {
                     incomeEnriched.setComment(income.getComment());
                     incomeEnriched.setStatusPayment(income.getStatusPayment());
                     incomeEnriched.setStatusNotification(income.isStatusNotification());
+                    incomeEnriched.setPhoneNumber(income.getPhoneNumber());
                     incomeEnriched.setCreatedAt(income.getCreatedAt());
                     incomeEnriched.setUpdatedAt(income.getUpdatedAt());
 
@@ -80,6 +81,7 @@ public class IncomeService {
         income.setCategories(userDto.getCategories());
         income.setType(userDto.getType());
         income.setFileUrls(List.of());
+        income.setPhoneNumber(userDto.getPhoneNumber());
         income.setStatusPayment(PENDING);
         income.setCreatedAt(LocalDateTime.now());
         income.setUpdatedAt(LocalDateTime.now());
