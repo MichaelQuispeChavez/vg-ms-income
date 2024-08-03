@@ -12,12 +12,18 @@ spring:
   client:
     ms-storage:
       url: https://vg-ms-storage-production.up.railway.app/storage
+    ms-user:
+      url: https://vg-ms-user-production.up.railway.app/api/users
     ms-notification-gmail:
-      url: http://localhost:3000/generate-pdf
+      url: https://vg-notification-gmail-production.up.railway.app
 feign:
   client:
     config:
       ms-storage:
+        connectTimeout: 5000
+        readTimeout: 5000ac
+        loggerLevel: BASIC
+      ms-user:
         connectTimeout: 5000
         readTimeout: 5000
         loggerLevel: BASIC

@@ -1,8 +1,12 @@
 package pe.edu.vallegrande.vg_ms_income.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
+import pe.edu.vallegrande.vg_ms_income.domain.dto.User;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -23,4 +27,14 @@ public class Income {
     private boolean statusNotification;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
+    @Transient
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private User celebrant;
+    @Transient
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private User user;
+    @Transient
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private User personConfirmed;
 }

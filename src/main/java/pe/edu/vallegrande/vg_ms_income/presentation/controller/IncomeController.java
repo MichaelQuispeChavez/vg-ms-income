@@ -37,9 +37,10 @@ public class IncomeController {
 
     @PatchMapping("/update/{incomeId}")
     public Mono<ResponseEntity<Income>> updateIncome(@PathVariable String incomeId,
-            @ModelAttribute AdminIncomeDto adminDto,
-            @RequestParam("files") MultipartFile[] newFiles) {
-        return incomeService.updateIncome(incomeId, adminDto, newFiles)
+                                                     @RequestBody AdminIncomeDto adminDto) {
+        return incomeService.updateIncome(incomeId, adminDto)
                 .defaultIfEmpty(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build());
     }
+
+
 }

@@ -15,8 +15,12 @@ public class CategoryService {
     public Flux<Category> getAll() {
         return categoryRepository.findAll();
     }
+
+    public Mono<Category> getById(String categoryId) {
+        return categoryRepository.findById(categoryId);
+    }
+
     public Mono<Category> createCategory(Category category) {
         return categoryRepository.save(category);
     }
-
 }
