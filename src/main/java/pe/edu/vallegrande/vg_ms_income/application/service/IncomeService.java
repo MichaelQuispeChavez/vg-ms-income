@@ -97,6 +97,7 @@ public class IncomeService {
         income.setType('I');
         income.setFileUrls(List.of());
         income.setStatusPayment(PENDING);
+        income.setNameProof(userDto.getNameProof());
         income.setProofId(userDto.getProofId());
         income.setStatusNotification(false);
         income.setCreatedAt(LocalDateTime.now());

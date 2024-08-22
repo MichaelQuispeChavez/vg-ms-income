@@ -14,6 +14,7 @@ public class UserIncome {
     private List<String> fileUrls;
     private char statusPayment;
     private boolean statusNotification;
+    private String nameProof;
     private String proofId;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

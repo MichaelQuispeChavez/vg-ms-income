@@ -24,6 +24,7 @@ public class Income {
     private String comment;
     private char statusPayment;
     private boolean statusNotification;
+    private String nameProof;
     private String proofId;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
