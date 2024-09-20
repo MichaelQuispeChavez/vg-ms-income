@@ -1,23 +1,17 @@
-package pe.edu.vallegrande.vg_ms_income.presentation.controller;
+package pe.edu.vallegrande.vg_ms_income.presentation.controller.Category;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.vallegrande.vg_ms_income.application.service.CategoryService;
 import pe.edu.vallegrande.vg_ms_income.domain.model.Category;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@CrossOrigin("*")
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/income_category")
-public class CategoryController {
+@RequestMapping("/management/income_category/v1")
+public class CategoryManagementController {
     private final CategoryService categoryService;
 
-    @GetMapping
-    public Flux<Category> getAllAccountings() {
-        return categoryService.getAll();
-    }
 
     @PostMapping("/create")
     public Mono<Category> createCategory(@RequestBody Category category) {

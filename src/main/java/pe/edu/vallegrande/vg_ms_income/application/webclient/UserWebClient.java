@@ -17,7 +17,7 @@ public class UserWebClient {
 
     public Mono<User> getUserById(String id) {
         return webClient.get()
-                .uri("/{id}", id)
+                .uri("/management/user/v1/details/id/{id}", id)
                 .retrieve()
                 .bodyToMono(User.class);
     }

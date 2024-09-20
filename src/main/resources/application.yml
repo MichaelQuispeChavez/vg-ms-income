@@ -1,5 +1,5 @@
 server:
-  port: 8085
+  port: 7004 
 spring:
   data:
     mongodb:
@@ -13,6 +13,12 @@ spring:
     ms-storage:
       url: https://vg-ms-storage-production.up.railway.app
     ms-user:
-      url: https://vg-ms-user-production.up.railway.app/api/users
+      url: https://vg-ms-user-production.up.railway.app
     ms-notification-gmail:
       url: https://vg-notification-gmail-production.up.railway.app
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api/income
