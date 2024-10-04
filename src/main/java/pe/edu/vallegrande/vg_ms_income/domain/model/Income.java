@@ -18,7 +18,7 @@ public class Income {
     private String personId;
     private LocalDateTime dateEvent;
     private String categoryId;  
-    private char type;
+    private char type; 
     private List<String> fileUrls;
     private String personConfirmedId;
     private String comment;

@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 import pe.edu.vallegrande.vg_ms_income.application.service.IncomeService;
 import pe.edu.vallegrande.vg_ms_income.domain.dto.UserIncome;
 import pe.edu.vallegrande.vg_ms_income.domain.model.Income;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -17,6 +18,11 @@ public class IncomeCommunityController {
 
     public IncomeCommunityController(IncomeService incomeService) {
         this.incomeService = incomeService;
+    }
+
+    @GetMapping("/list/{personId}")
+    public Flux<Income> getIncomesByPersonId(@PathVariable String personId) {
+        return incomeService.listIncomesByPersonId(personId); // Llamar al método del servicio
     }
 
     @PostMapping("/create")

@@ -56,6 +56,22 @@ public class IncomeService {
                         }));
     }
 
+public Flux<Income> listIncomesByPersonId(String personId) {
+    return incomeRepository.findByPersonId(personId) // Suponiendo que tienes este método en tu repositorio
+            .flatMap(income -> retrieveUsersList(income)
+                    .flatMap(tuple -> {
+                        income.setUser(tuple.getT1());
+                        income.setPersonConfirmed(tuple.getT2());
+                        return retrieveCategory(income)
+                                .map(category -> {
+                                    income.setCategory(category);
+                                    return income;
+                                })
+                                .defaultIfEmpty(income);
+                    }));
+}
+
+
     private Mono<Category> retrieveCategory(Income income) {
         if (income.getCategoryId() != null) {
             return categoryRepository.findById(income.getCategoryId());
