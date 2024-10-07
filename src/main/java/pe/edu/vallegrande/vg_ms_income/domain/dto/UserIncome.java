@@ -13,6 +13,7 @@ public class UserIncome {
     private char type;
     private List<String> fileUrls;
     private char statusPayment;
+    private String typePayment;
     private boolean statusNotification;
     private String nameProof;
     private String proofId;

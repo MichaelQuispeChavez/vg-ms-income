@@ -23,6 +23,7 @@ public class Income {
     private String personConfirmedId;
     private String comment;
     private char statusPayment;
+    private String typePayment;
     private boolean statusNotification;
     private String nameProof;
     private String proofId;

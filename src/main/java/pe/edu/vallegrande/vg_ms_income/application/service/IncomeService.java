@@ -111,6 +111,7 @@ public Flux<Income> listIncomesByPersonId(String personId) {
         income.setDateEvent(userDto.getDateEvent());
         income.setCategoryId(userDto.getCategoryId());
         income.setType('I');
+        income.setTypePayment(userDto.getTypePayment());
         income.setFileUrls(List.of());
         income.setStatusPayment(PENDING);
         income.setNameProof(userDto.getNameProof());
